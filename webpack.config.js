@@ -13,7 +13,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var CONFIG_DEV = require('./config/dev');
+var CONFIG = require('./config/dev');
 
 module.exports = {
     /* 输入文件 */
@@ -32,18 +32,16 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.css$/,
-                loaders: [{
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'postcss-loader'
-                    },
-                    {
-                        loader: 'style-loader'
-                    }
-                ]
-            },
+            test: /\.css$/,
+            use: [{
+                    loader: 'style-loader'
+                },{
+                    loader: 'css-loader'
+                },{
+                    loader: 'postcss-loader'
+                }
+            ]
+        },
             /* 用来解析vue后缀的文件 */
             {
                 test: /\.vue$/,
@@ -95,30 +93,33 @@ module.exports = {
             minify: {
                 removeComments: true,
                 collapseWhitespace: false
+            },
+            files: {
+                "flexible": CONFIG.PUBLICPATH + "lib/flexible/"
             }
         }),
-        // new CopyWebpackPlugin([
-        //     {
-        //         from: path.resolve(__dirname, 'src/lib/flexible'),
-        //         to: path.resolve(__dirname, config.path + '/lib/flexible'),
-        //         force: true,
-        //         toType: 'dir',
-        //         ignore: ['.*']
-        //     }
-        // ]),
-        // new CopyWebpackPlugin([
-        //     {
-        //         from: path.resolve(__dirname, 'src/img'),
-        //         to: path.resolve(__dirname, config.path + '/img'),
-        //         force: true,
-        //         toType: 'dir',
-        //         ignore: ['.*']
-        //     }
-        // ]),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'src/lib/flexible'),
+                to: path.resolve(__dirname, CONFIG.PATH + '/lib/flexible'),
+                force: true,
+                toType: 'dir',
+                ignore: ['.*']
+            }
+        ]),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'src/img'),
+                to: path.resolve(__dirname, CONFIG.PATH + '/img'),
+                force: true,
+                toType: 'dir',
+                ignore: ['.*']
+            }
+        ]),
         // new CopyWebpackPlugin([
         //     {
         //         from: path.resolve(__dirname, 'src/api'),
-        //         to: path.resolve(__dirname, config.path + '/api'),
+        //         to: path.resolve(__dirname, CONFIG.PATH + '/api'),
         //         force: true,
         //         toType: 'dir',
         //         ignore: ['.*']
@@ -129,7 +130,7 @@ module.exports = {
             'process.env': {
                 NODE_ENV: '"development"'
             },
-            'CONFIG': JSON.stringify(CONFIG_DEV)
+            'CONFIG': JSON.stringify(CONFIG)
         }),
         // new CleanWebpackPlugin(
         //   ['dist/js/*.js'], 　 //匹配删除的文件
