@@ -116,15 +116,15 @@ module.exports = {
                 ignore: ['.*']
             }
         ]),
-        // new CopyWebpackPlugin([
-        //     {
-        //         from: path.resolve(__dirname, 'src/api'),
-        //         to: path.resolve(__dirname, CONFIG.PATH + '/api'),
-        //         force: true,
-        //         toType: 'dir',
-        //         ignore: ['.*']
-        //     }
-        // ]),
+         new CopyWebpackPlugin([
+             {
+                 from: path.resolve(__dirname, 'src/api'),
+                 to: path.resolve(__dirname, CONFIG.PATH + '/api'),
+                 force: true,
+                 toType: 'dir',
+                 ignore: ['.*']
+             }
+         ]),
         // 借鉴 vue 官方的生成环境配置
         new webpack.DefinePlugin({
             'process.env': {

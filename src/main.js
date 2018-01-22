@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 
 import router from './router'
+import Promise from 'promise-polyfill';
+window.Promise = Promise;
 
 // Vue.config.productionTip = false
 
