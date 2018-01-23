@@ -13,8 +13,15 @@ export default new Router({
             component: Index
         },
         {
-            path: '/axios',
+            name: 'axios',
+            path: '/axios/:userId',
             component: Axios
+        }
+        ,
+        {
+            name: 'axiosAll',
+            path: '/axiosAll',
+            component: AxiosAll
         }
     ]
 })

@@ -34,12 +34,12 @@ module.exports = {
         rules: [{
             test: /\.css$/,
             use: [{
-                    loader: 'style-loader'
-                },{
-                    loader: 'css-loader'
-                },{
-                    loader: 'postcss-loader'
-                }
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader'
+            }, {
+                loader: 'postcss-loader'
+            }
             ]
         },
             /* 用来解析vue后缀的文件 */
@@ -84,7 +84,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 公共模块的名称
             // chunks: chunks, // chunks 是需要提取的模块
-            // minChunks: chunks.length
+            minChunks: 2
         }),
         new HtmlWebpackPlugin({
             filename: './index.html', // html 文件输出路径
@@ -116,15 +116,15 @@ module.exports = {
                 ignore: ['.*']
             }
         ]),
-         new CopyWebpackPlugin([
-             {
-                 from: path.resolve(__dirname, 'src/api'),
-                 to: path.resolve(__dirname, CONFIG.PATH + '/api'),
-                 force: true,
-                 toType: 'dir',
-                 ignore: ['.*']
-             }
-         ]),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'src/api'),
+                to: path.resolve(__dirname, CONFIG.PATH + '/api'),
+                force: true,
+                toType: 'dir',
+                ignore: ['.*']
+            }
+        ]),
         // 借鉴 vue 官方的生成环境配置
         new webpack.DefinePlugin({
             'process.env': {

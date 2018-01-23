@@ -1,74 +1,10 @@
 html, body {
     height: 100%;
 }
-.index{
-    height: 100%;
-    background: #030b18 url('../img/bg.jpg') no-repeat center top;
-    background-size: 100% auto;
+.tab {
+    display: flex;
+    flex-flow: column;
 }
-.in_title{
-    margin: 0 auto;
-    padding-top: 190px /*px*/;
-    width: 583px /*px*/;
-    height: 46px /*px*/;
-    background: url(../img/t.png) no-repeat center bottom;
-    background-size: 100% auto;
-}
-.in_des{
-    margin: 30px auto 0; /*px*/
-    width: 500px; /*px*/
-    height: 91px; /*px*/
-    background: url(../img/t2.png) no-repeat center bottom;
-    background-size: contain;
-}
-.in_link{
-    position: fixed;
-    bottom: 145px; /*px*/
-    left: 50%;
-    width: 320px; /*px*/
-    height: 140px; /*px*/
-    background: url(../img/btn.png) no-repeat;
-    background-size: contain;
-    transform: translateX(-50%);
-}
-#video{
-    position: absolute;
-    top:0;
-    left: 0;
-    object-fit:contain;
-}
-
-.axios-test{
-    background: #ccc;
-}
-.axios-test ul.axios_tab{
-    display: table;
-    width: 100%;
-    border-bottom: 1px solid #000; /*no*/
-}
-.axios-test ul.axios_tab li{
-    display: table-cell;
-    text-align: center;
-    font-size: 24px; /*px*/
-    padding: 20px 0; /*px*/
-}
-.axios-test ul.axios_tab li.active{
-    background: blue;
-}
-.axios-test ul.axios_content li{
-    font-size: 24px; /*px*/
-    padding: 20px; /*px*/
-    border-bottom: 1px solid #000; /*no*/
-}
-
-.share_test{
-    height: 100%;
-    background: #000;
-    text-align: center;
-}
-.share_test .btn{
-    margin: 100px auto; /*px*/
-    width: 300px;/*px*/
-    line-height: 60px;/*px*/
-    background: #f0f0f0;
+.tab a{
+    padding: 10px;
 }
