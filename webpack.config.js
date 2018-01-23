@@ -28,7 +28,7 @@ module.exports = {
         alias: {
             'vue': 'vue/dist/vue.js',
         },
-        extensions: ['.js', '.vue']
+        extensions: ['.js', '.vue', '.css']
     },
     module: {
         rules: [{
@@ -83,7 +83,6 @@ module.exports = {
         // 提取公共模块
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 公共模块的名称
-            // chunks: chunks, // chunks 是需要提取的模块
             minChunks: 2
         }),
         new HtmlWebpackPlugin({
@@ -107,15 +106,15 @@ module.exports = {
                 ignore: ['.*']
             }
         ]),
-        new CopyWebpackPlugin([
-            {
-                from: path.resolve(__dirname, 'src/img'),
-                to: path.resolve(__dirname, CONFIG.PATH + '/img'),
-                force: true,
-                toType: 'dir',
-                ignore: ['.*']
-            }
-        ]),
+        //new CopyWebpackPlugin([
+        //    {
+        //        from: path.resolve(__dirname, 'src/img'),
+        //        to: path.resolve(__dirname, CONFIG.PATH + '/img'),
+        //        force: true,
+        //        toType: 'dir',
+        //        ignore: ['.*']
+        //    }
+        //]),
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, 'src/api'),
@@ -125,6 +124,17 @@ module.exports = {
                 ignore: ['.*']
             }
         ]),
+        //压缩插件
+         new webpack.optimize.UglifyJsPlugin({
+             compress: {
+                 warnings: false,
+             },
+             output: {
+                 comments: false,
+             }
+         }),
+        //作用域提升特性
+        new webpack.optimize.ModuleConcatenationPlugin(),
         // 借鉴 vue 官方的生成环境配置
         new webpack.DefinePlugin({
             'process.env': {

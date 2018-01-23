@@ -13,6 +13,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+    "use strict";
     import Vue from "vue";
     import axios from "axios";
     import "../../css/base.css";

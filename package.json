@@ -1,8 +1,8 @@
 {
-  "name": "kansizhao",
+  "name": "vue2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "dev": "set NODE_ENV=development&&webpack",
     "start": "./node_modules/.bin/webpack-dev-server --content-base dev --hot --inline --port=8081",

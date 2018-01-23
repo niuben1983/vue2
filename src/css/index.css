@@ -8,3 +8,15 @@ html, body {
 .tab a{
     padding: 10px;
 }
+
+.axios_tab{
+    display: flex;
+    justify-content: space-around;
+}
+.axios_tab li{
+    flex-grow: 1;
+    text-align: center;
+}
+.axios_tab li.active{
+    background: #52adfe;
+}
