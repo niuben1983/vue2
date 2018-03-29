@@ -2,7 +2,7 @@
     <div class="tab">
         <router-link :to="{ name: 'axios', params: { userId: 123 }}">AXIOS</router-link>
         <router-link :to="{ name: 'axiosAll', query: { userId: 123, page: 34 }}">AXIOSALL</router-link>
-
+        <router-link :to="{ name: 'props'}">Pros</router-link>
     </div>
 </template>
 
