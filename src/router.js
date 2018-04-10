@@ -4,6 +4,7 @@ import Index from './page/index/app'
 import Axios from './page/axios/app'
 import AxiosAll from './page/axios/app-all'
 import Props from './page/props-route/app'
+import VuexState from './page/vuex/state'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
             name: 'props',
             path: '/props',
             component: Props
+        },
+        {
+            name: 'vuexState',
+            path: '/vuex/state',
+            component: VuexState
         }
         
     ]
