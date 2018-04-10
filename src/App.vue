@@ -1,33 +1,68 @@
 <template>
     <div id="app">
     
+    
+    
+        <div class="tab">
+    
+            <router-link :to="{ name: 'axios', params: { userId: 123 }}">AXIOS</router-link>
+    
+            <router-link :to="{ name: 'axiosAll', query: { userId: 123, page: 34 }}">AXIOSALL</router-link>
+    
+            <router-link :to="{ name: 'props'}">Pros</router-link>
+    
+        </div>
+    
         <div>$ON {{ value }}</div>
     
+    
+    
         <router-view/>
+    
+    
     
     </div>
 </template>
 
 <script>
-import Vue from "vue";
+    import Vue from "vue";
+    
     export default {
     
+    
+    
         name: 'app',
+    
         data() {
+    
             return {
+    
                 value: 0
+    
             }
+    
         },
+    
         modules: {
+    
             // receive(value){
+    
             //     this.value = value;
+    
             // }
+    
         },
-        created () {
+    
+        created() {
+    
             this.$root.$on('receive', res => {
+    
                 this.value = res;
+    
             })
+    
         }
+    
     }
 </script>
 

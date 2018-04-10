@@ -3,10 +3,11 @@ html, body {
 }
 .tab {
     display: flex;
-    flex-flow: column;
+    background: #52adfe;
 }
 .tab a{
-    padding: 10px;
+    flex:  1;
+    padding: 20px 0;
 }
 
 .axios_tab{
@@ -19,4 +20,7 @@ html, body {
 }
 .axios_tab li.active{
     background: #52adfe;
+}
+div {
+    margin-top: 20px;
 }

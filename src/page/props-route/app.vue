@@ -1,5 +1,5 @@
 <template>
-    <div class="tab">
+    <div>
     
         <button @click="routeParent()">emit</button>
     
