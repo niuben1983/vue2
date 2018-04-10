@@ -6,8 +6,20 @@ import App from './App'
 
 Vue.use(Vuex);
 import router from './router'
-import Promise from 'promise-polyfill';
-window.Promise = Promise;
+
+import promise from 'es6-promise';
+promise.polyfill();
+
+const store = new Vuex.Store({
+    state: {
+      count: 0
+    },
+    mutations: {
+      increment (state) {
+        state.count++
+      }
+    }
+  })
 
 // Vue.config.productionTip = false
 
@@ -15,6 +27,7 @@ window.Promise = Promise;
 new Vue({
     el: '#app',
     router,
+    store,
     template: '<App/>',
     components: { App }
 })
