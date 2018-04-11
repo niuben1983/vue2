@@ -4,10 +4,9 @@
         <div class="tab">
 
             <router-link :to="{ path: '/vuex/state'}">STATE</router-link>
-
-            <router-link :to="{ name: 'axiosAll', query: { userId: 123, page: 34 }}">AXIOSALL</router-link>
-
-            <router-link :to="{ name: 'props'}">Pros</router-link>
+            <router-link :to="{ path: '/vuex/getters'}">GETTERS</router-link>
+            <router-link :to="{ path: '/vuex/mutations'}">MUTATIONS</router-link>
+            <router-link :to="{ path: '/vuex/action'}">ACTION</router-link>
 
         </div>
         <div class="tab">
