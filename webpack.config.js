@@ -22,7 +22,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dev'), // html, css, js 图片等资源文件的输出路径，将所有资源文件放在 dist 目录
         publicPath: 'dev', // html, css, js 图片等资源文件的 server 上的路径
         filename: 'js/[name].js', // 每个入口 js 文件的生成配置
-        chunkFilename: 'js/[id].js'
+        chunkFilename: 'js/[name].js'
     },
     resolve: {
         alias: {

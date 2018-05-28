@@ -10,7 +10,7 @@
 
 <script type="text/ecmascript-6">
     import Vue from "vue";
-    import { mapState, mapGetters, mapMutations } from 'vuex'
+    import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 
     export default {
         data() {
@@ -32,8 +32,11 @@
         },
         methods: {
             ...mapMutations({
-                addCount: 'addTodos',
+                // addCount: 'addTodos',
                 removeCount: 'delTodos'
+            }),
+            ...mapActions({
+                addCount: 'increment'
             })
         },
         components: {},

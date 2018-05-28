@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from './page/index/app'
-import Axios from './page/axios/app'
-import AxiosAll from './page/axios/app-all'
-import Props from './page/props-route/app'
-import VuexState from './page/vuex/state'
-import VuexGetters from './page/vuex/getters'
-import VuexMutations from './page/vuex/mutations'
-import VuexAction from './page/vuex/action'
+
+const Index = () => import(/* webpackChunkName: "Index" */ './page/index/app')
+const Axios = () => import(/* webpackChunkName: "Axios" */ './page/axios/app')
+const AxiosAll = () => import(/* webpackChunkName: "AxiosAll" */ './page/axios/app-all')
+const Props = () => import(/* webpackChunkName: "Props" */ './page/props-route/app')
+const VuexState = () => import(/* webpackChunkName: "VuexState" */ './page/vuex/state')
+const VuexGetters = () => import(/* webpackChunkName: "VuexGetters" */ './page/vuex/getters')
+const VuexMutations = () => import(/* webpackChunkName: "VuexMutations" */ './page/vuex/mutations')
+const VuexAction = () => import(/* webpackChunkName: "VuexAction" */ './page/vuex/action')
 
 Vue.use(Router)
 
