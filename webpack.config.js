@@ -24,6 +24,10 @@ module.exports = {
         filename: 'js/[name].js', // 每个入口 js 文件的生成配置
         chunkFilename: 'js/[name].js'
     },
+    //第三方引入
+    externals: {
+        //'vue': 'vue'
+    },
     resolve: {
         alias: {
             'vue': 'vue/dist/vue.js',
