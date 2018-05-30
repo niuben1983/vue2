@@ -20,7 +20,7 @@ export default new Router({
         },
         {
             name: 'axios',
-            path: '/axios/:userId',
+            path: '/axios/:userId?',
             component: Axios
         },
         {
