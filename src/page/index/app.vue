@@ -36,6 +36,7 @@
         created() {
         },
         mounted() {
+            console.log(base.webpath);
         }
     };
 </script>
