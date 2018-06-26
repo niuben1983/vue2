@@ -18,6 +18,12 @@
             <router-link :to="{ name: 'props'}">Pros</router-link>
 
         </div>
+        <div class="tab">
+
+            <router-link :to="{ path: '/mockjs'}">MOCKJS</router-link>
+
+
+        </div>
 
         <div>$ON {{ value }}</div>
 

@@ -9,6 +9,7 @@ const VuexState = () => import(/* webpackChunkName: "VuexState" */ './page/vuex/
 const VuexGetters = () => import(/* webpackChunkName: "VuexGetters" */ './page/vuex/getters')
 const VuexMutations = () => import(/* webpackChunkName: "VuexMutations" */ './page/vuex/mutations')
 const VuexAction = () => import(/* webpackChunkName: "VuexAction" */ './page/vuex/action')
+const Mockjs = () => import(/* webpackChunkName: "mockjs" */ './page/mockjs/app')
 
 Vue.use(Router)
 
@@ -52,7 +53,11 @@ export default new Router({
             name: 'VuexAction',
             path: '/vuex/action',
             component: VuexAction
+        },
+        {
+            name: 'Mockjs',
+            path: '/mockjs',
+            component: Mockjs
         }
-        
     ]
 })
