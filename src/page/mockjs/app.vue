@@ -15,7 +15,7 @@
     import '../../css/base.css';
     import '../../css/index.css';
     const api = "/api/list.json";
-    import { getTodoList, addTodo } from '../../api/api';
+//    import { getTodoList, addTodo } from '../../api/api';
 
     export default {
         data() {
@@ -26,7 +26,7 @@
         computed: {},
         methods: {
             fetchData() {
-                getTodoList({}).then(res => {
+                axios.get('/todo/list', {}).then(res => {
                     const TODOS = res.data.todos; // 数据都会返回在res.data里面。
                     this.list = TODOS;
                 });
