@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "dev": "set NODE_ENV=development&&webpack",
-    "start": "./node_modules/.bin/webpack-dev-server --content-base dev --hot --inline --port=8081",
+    "start": "./node_modules/.bin/webpack-dev-server --content-base dev --hot --inline --host=0.0.0.0 --port=8081",
     "pre": "set NODE_ENV=pre&&webpack",
     "prod": "set NODE_ENV=production&&webpack",
     "macProd": "NODE_ENV=production webpack"
